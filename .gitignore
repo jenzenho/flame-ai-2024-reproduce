@@ -1,0 +1,4 @@
+__pycache__/
+figures/
+model_outputs/
+model_outputs*.tar.gz

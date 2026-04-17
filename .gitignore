@@ -2,3 +2,6 @@ __pycache__/
 figures/
 model_outputs/
 model_outputs*.tar.gz
+._model_outputs/
+.DS_Store
+._*

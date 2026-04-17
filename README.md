@@ -13,12 +13,12 @@ This repository is intended to:
 - keep the paper artifact lightweight and easy to navigate
 - document where each model came from and how it can be retrained or re-run elsewhere
 
+## Dataset overview
+
+The **FLAME AI 2024** dataset is a spatiotemporal fire prediction benchmark used to compare multiple forecasting approaches on a shared set of cases. In this repository, we include the processed artifacts needed to regenerate selected figures from the paper, rather than the full raw training pipeline for every model.
+
 ## Download model outputs
 The `model_outputs/` directory needs to be downloaded before the other plotting scripts can work. To download and extract it:
 
 ```bash
 python3 download_model_outputs.py
-
-## Dataset overview
-
-The **FLAME AI 2024** dataset is a spatiotemporal fire prediction benchmark used to compare multiple forecasting approaches on a shared set of cases. In this repository, we include the processed artifacts needed to regenerate selected figures from the paper, rather than the full raw training pipeline for every model.

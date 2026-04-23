@@ -1,0 +1,70 @@
+{
+  "title": "FLAME AI 2024 Paper Reproducibility Repository",
+  "upload_type": "software",
+  "version": "1.0.8",
+  "description": "Code and archived prediction outputs for reproducing the main figures from the FLAME AI 2024 wildfire spread benchmarking paper.",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Ho, J. Z.",
+      "orcid": "0000-0001-5511-0336",
+      "affiliation": "Stanford University"
+    }
+    {
+      "name": "Bazgir, A.",
+      "affiliation": "University of Missouri"
+    },
+    {
+      "name": "Hossain, J.",
+      "affiliation": "Private Individual"
+    },
+    {
+      "name": "Pawłowski, R.",
+      "orcid": "0009-0001-9764-2581",
+      "affiliation": "Private Individual"
+    },
+    {
+      "name": "Li, Z.",
+      "affiliation": "Nanjing University of Information Science and Technology"
+    },
+    {
+      "name": "Dubail, T.",
+      "affiliation": "Private Individual"
+    },
+    {
+      "name": "Wang, Q.",
+      "affiliation": "Google"
+    },
+    {
+      "name": "Gazen, C.",
+      "affiliation": "Google"
+    },
+    {
+      "name": "Akoush, B.",
+      "orcid": "0000-0001-5160-4451",
+      "affiliation": "Stanford University"
+    },
+    {
+      "name": "Chung, W. T.",
+      "orcid": "0000-0002-6447-4008",
+      "affiliation": "Stanford University"
+    },
+    {
+      "name": "Reade, W.",
+      "orcid": "0000-0002-9215-700X",
+      "affiliation": "Google"
+    },
+    {
+      "name": "Ihme, M.",
+      "orcid": "0000-0002-4158-7050",
+      "affiliation": "Stanford University"
+    }
+  ],
+  "keywords": [
+    "wildfire",
+    "machine learning",
+    "fire spread",
+    "reproducibility",
+    "FireBench"
+  ]
+}

@@ -4,9 +4,9 @@ message: "If you use this software, please cite it using the metadata below."
 type: software
 authors:
   - family-names: Ho
-    given-names: J. Z.
+    given-names: Jen Zen
     affiliation: Stanford University
-    orcid: "https://orcid.org/YOUR-ORCID-HERE"
+    orcid: "https://orcid.org/0000-0001-5511-0336"
 version: 1.0.0
 license: "CC BY-NC-SA 4.0"
 abstract: "Code and archived prediction outputs for reproducing the main figures from the FLAME AI 2024 wildfire spread benchmarking paper."

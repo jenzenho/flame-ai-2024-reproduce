@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: "FLAME AI 2024 Paper Reproducibility Repository"
+message: "If you use this software, please cite it using the metadata below."
+type: software
+authors:
+  - family-names: Ho
+    given-names: J. Z.
+    affiliation: Stanford University
+    orcid: "https://orcid.org/YOUR-ORCID-HERE"
+version: 1.0.0
+license: "CC BY-NC-SA 4.0"
+abstract: "Code and archived prediction outputs for reproducing the main figures from the FLAME AI 2024 wildfire spread benchmarking paper."
+keywords:
+  - wildfire
+  - machine learning
+  - fire spread
+  - reproducibility
+  - FireBench

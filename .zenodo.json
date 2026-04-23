@@ -1,7 +1,7 @@
 {
   "title": "FLAME AI 2024 Paper Reproducibility Repository",
   "upload_type": "software",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Code and archived prediction outputs for reproducing the main figures from the FLAME AI 2024 wildfire spread benchmarking paper.",
   "language": "eng",
   "creators": [

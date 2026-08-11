@@ -160,7 +160,7 @@ def plot_models_comparison_static(xif_data, list_of_preds,
         ax.set_ylabel(r'$z\ \mathrm{[m]}$')
     
         if row == nrows - 1:
-            ax.set_xlabel(r'$\xi_f\ \mathrm{[m]}$')
+            ax.set_xlabel(r'$\xi\ \mathrm{[m]}$')
             ax.tick_params(axis='x', which='both', labelbottom=True)
     
             cax = inset_axes(ax,

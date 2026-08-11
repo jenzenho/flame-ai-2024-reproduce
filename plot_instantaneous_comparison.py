@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 # Set global font sizes
 plt.rcParams.update({
     'font.size': 18,            # Default font size for everything
+    'mathtext.fontset': 'cm',   # Computer Modern math
     'axes.titlesize': 23,       # Title size
     'axes.labelsize': 23,       # X and Y labels
     'xtick.labelsize': 23,      # X tick labels
@@ -126,7 +127,7 @@ def plot_models_comparison_static(xif_data, list_of_preds,
     """
     Stack of images (ground truth + N models) for one (case, time).
 
-    * Each subplot gets y‑axis label “y [m]”.
+    * Each subplot gets y‑axis label “z [m]”.
     * Bottom subplot also shows x‑axis with label “x [m]”.
     * Pixel size is 8 m ⇒ axes scaled accordingly.
     """
@@ -156,10 +157,10 @@ def plot_models_comparison_static(xif_data, list_of_preds,
         im = ax.imshow(arr, cmap='hot', vmin=0, vmax=1,
                        origin='lower', extent=extent_rot, aspect='auto')
     
-        ax.set_ylabel('y [m]')
+        ax.set_ylabel(r'$z\ \mathrm{[m]}$')
     
         if row == nrows - 1:
-            ax.set_xlabel('x [m]')
+            ax.set_xlabel(r'$\xi_f\ \mathrm{[m]}$')
             ax.tick_params(axis='x', which='both', labelbottom=True)
     
             cax = inset_axes(ax,

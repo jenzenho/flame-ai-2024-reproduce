@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 # Set global font sizes
 plt.rcParams.update({
-    'font.size': 14,            # Default font size for everything
+    'font.size': 18,            # Default font size for everything
     'axes.titlesize': 23,       # Title size
     'axes.labelsize': 23,       # X and Y labels
     'xtick.labelsize': 23,      # X tick labels
@@ -24,11 +24,20 @@ plt.rcParams.update({
 # -----------------------------------------------------------------------------
 data_root_folder = './model_outputs/'
 
-folders = ['Baseline','Baseline_with_Otsu',
-           'Baseline_4fold_uniformweight_ensemblerollout','Baseline_4fold_uniformweight_ensemblerollout_otsu',
-           'Baseline_4fold_4xsmaller_uniformweight_ensemblerollout_otsu',
-           'Baseline_4fold_25epochs_uniformweight_ensemblerollout_otsu']
-model_labels = ['Baseline','Otsu','4-fold','4-fold Otsu','4-fold Otsu 4x smaller','4fold Otsu 25 epochs']
+
+COMPETITION_OR_BASELINEMODS = 'competition' 
+
+if COMPETITION_OR_BASELINEMODS == 'competition':
+    folders = ['Line','Nelson ROS','Simulation ROS','Baseline','Ajay Asaithambi','Jobayer Hossain','Rafal Pawlowski','Zhuoqun Li','Thomas Dubail']
+    model_label = ['Linear Regression','Nelson ROS','Simulation ROS','Baseline ML Model','Mixed','Latent Loop','SwinUNet','MultiResUNet','Conv-TT-LSTM']
+elif COMPETITION_OR_BASELINEMODS == 'baseline_modifications':
+    folders = ['Baseline','Baseline_with_Otsu',
+               'Baseline_4fold_uniformweight_ensemblerollout','Baseline_4fold_uniformweight_ensemblerollout_otsu',
+               'Baseline_4fold_4xsmaller_uniformweight_ensemblerollout_otsu',
+               'Baseline_4fold_25epochs_uniformweight_ensemblerollout_otsu']
+    model_label = ['Baseline','Otsu','4-fold','4-fold Otsu',
+                   '4-fold Otsu 4x smaller',
+                   '4-fold Otsu 25 epochs']
 
 xif_filename = 'xif_after_comp.npy'
 pred_filename = 'pred_after_comp.npy'
@@ -185,7 +194,7 @@ plot_models_comparison_static(
     list_of_preds = all_scar_or_line_preds,
     case_idx   = selected_case_idx,
     time_idx   = selected_time_idx,
-    model_labels  = model_labels,
+    model_labels  = model_label,
     outfile    = outfile
 )
 

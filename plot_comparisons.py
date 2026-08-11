@@ -35,8 +35,8 @@ ROOT_FOLDER = Path("./model_outputs")
 COMPETITION_OR_BASELINEMODS = 'competition' 
 
 if COMPETITION_OR_BASELINEMODS == 'competition':
-    folders = ['Line','Simulation ROS','Baseline','Ajay Asaithambi','Jobayer Hossain','Rafal Pawlowski','Zhuoqun Li','Thomas Dubail']
-    model_label = ['Linear Regression','Simulation ROS','Baseline ML Model','Mixed','Latent Loop','SwinUNet','MultiResUNet','Conv-TT-LSTM']
+    folders = ['Line','Nelson ROS','Simulation ROS','Baseline','Ajay Asaithambi','Jobayer Hossain','Rafal Pawlowski','Zhuoqun Li','Thomas Dubail']
+    model_label = ['Linear Regression','Nelson ROS','Simulation ROS','Baseline ML Model','Mixed','Latent Loop','SwinUNet','MultiResUNet','Conv-TT-LSTM']
 elif COMPETITION_OR_BASELINEMODS == 'baseline_modifications':
     folders = ['Baseline','Baseline_with_Otsu',
                'Baseline_4fold_uniformweight_ensemblerollout','Baseline_4fold_uniformweight_ensemblerollout_otsu',
@@ -196,9 +196,9 @@ perc_spread_mean_all = np.array(perc_spread_mean_all)
 # Shared plotting style used for all exported metric figures.
 plt.rcParams["font.family"] = "Times New Roman"
 
-FONT_LABEL = 16
-FONT_TICK = 14
-FONT_LEGEND = 9
+FONT_LABEL = 18
+FONT_TICK = 18
+FONT_LEGEND = 12
 
 VEC_FMT = "pdf"   # change to "eps" if needed
 OUTDIR = Path("./figures/error_metrics")
@@ -206,6 +206,7 @@ OUTDIR.mkdir(parents=True, exist_ok=True)
 
 CUSTOM_COLORS = [
     "#0072B2",  # Blue
+    "#7F7F7F",
     "#E69F00",  # Orange
     "#56B4E9",  # Sky Blue
     "#009E73",  # Green
@@ -259,7 +260,7 @@ def plot_metric_series(data, model_labels, ylabel, filename, show_legend=False):
     fig, ax = plt.subplots(dpi=300, figsize=(6, 4.5))
 
     for i in range(data.shape[0]):
-        linestyle = "--" if i < 3 else "-"
+        linestyle = "--" if i < 4 else "-"
         color = CUSTOM_COLORS[i % len(CUSTOM_COLORS)]
         ax.plot(
             np.arange(data.shape[1]) + 1,

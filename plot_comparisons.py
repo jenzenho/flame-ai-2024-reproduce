@@ -32,11 +32,23 @@ ROOT_FOLDER = Path("./model_outputs")
 # Choose which family of models to compare:
 # - 'competition': original competition entries
 # - 'baseline_modifications': variants of the baseline model
-COMPETITION_OR_BASELINEMODS = 'competition' 
+COMPETITION_OR_BASELINEMODS = 'baseline_modifications' 
 
 if COMPETITION_OR_BASELINEMODS == 'competition':
-    folders = ['Line','Nelson ROS','Simulation ROS','Baseline','Ajay Asaithambi','Jobayer Hossain','Rafal Pawlowski','Zhuoqun Li','Thomas Dubail']
-    model_label = ['Linear Regression','Nelson ROS','Simulation ROS','Baseline ML Model','Mixed','Latent Loop','SwinUNet','MultiResUNet','Conv-TT-LSTM']
+    folders = ['Line','Rothermel ROS','Nelson ROS','Simulation ROS','Baseline','Ajay Asaithambi','Jobayer Hossain','Rafal Pawlowski','Zhuoqun Li','Thomas Dubail']
+    model_label = ['Linear Regression','Rothermel ROS','Nelson ROS','Simulation ROS','Baseline ML Model','Mixed','Latent Loop','SwinUNet','MultiResUNet','Conv-TT-LSTM']
+    CUSTOM_COLORS = [
+        "#0072B2",  # Blue
+        "#D55E00",  # Vermillion
+        "#009E73",  # Green
+        "#CC79A7",  # Purple
+        "#000000",  # Black
+        "#0072B2",  # Re-use since the first 5 are dashed lines anyway
+        "#D55E00",
+        "#009E73",
+        "#CC79A7",
+        "#000000",
+    ]
 elif COMPETITION_OR_BASELINEMODS == 'baseline_modifications':
     folders = ['Baseline','Baseline_with_Otsu',
                'Baseline_4fold_uniformweight_ensemblerollout','Baseline_4fold_uniformweight_ensemblerollout_otsu',
@@ -45,6 +57,16 @@ elif COMPETITION_OR_BASELINEMODS == 'baseline_modifications':
     model_label = ['Baseline','Otsu','4-fold','4-fold Otsu',
                    '4-fold Otsu 4x smaller',
                    '4-fold Otsu 25 epochs']
+    CUSTOM_COLORS = [
+    "#0072B2",  # Blue
+    "#E69F00",  # Orange
+    "#56B4E9",  # Sky Blue
+    "#009E73",  # Green
+    "#8C564B",  # Brown
+    "#D55E00",  # Red-orange
+    "#CC79A7",  # Purple
+    "#000000",  # Black 
+    ]
 
 assert len(folders) == len(model_label)
 
@@ -198,23 +220,11 @@ plt.rcParams["font.family"] = "Times New Roman"
 
 FONT_LABEL = 18
 FONT_TICK = 18
-FONT_LEGEND = 12
+FONT_LEGEND = 10
 
 VEC_FMT = "pdf"   # change to "eps" if needed
 OUTDIR = Path("./figures/error_metrics")
 OUTDIR.mkdir(parents=True, exist_ok=True)
-
-CUSTOM_COLORS = [
-    "#0072B2",  # Blue
-    "#7F7F7F",
-    "#E69F00",  # Orange
-    "#56B4E9",  # Sky Blue
-    "#009E73",  # Green
-    "#8C564B",  # Brown
-    "#D55E00",  # Red-orange
-    "#CC79A7",  # Purple
-    "#000000",  # Black (8th model)
-]
 
 def style_axis(ax, ylabel=None, show_legend=False):
     """Apply consistent formatting to a time-series metric axis."""
@@ -260,7 +270,7 @@ def plot_metric_series(data, model_labels, ylabel, filename, show_legend=False):
     fig, ax = plt.subplots(dpi=300, figsize=(6, 4.5))
 
     for i in range(data.shape[0]):
-        linestyle = "--" if i < 4 else "-"
+        linestyle = "--" if i < (data.shape[0]/2) else "-"
         color = CUSTOM_COLORS[i % len(CUSTOM_COLORS)]
         ax.plot(
             np.arange(data.shape[1]) + 1,

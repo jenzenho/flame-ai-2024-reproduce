@@ -59,8 +59,8 @@ for folder in folders:
     all_predictions.append(pred_after_comp)
 
 # User‐selectable parameters
-desired_u     = 10     # e.g. 10 m/s
-desired_alpha = 30   # e.g. 30 degrees
+desired_u     = 7     # e.g. 10 m/s
+desired_alpha = 12.5   # e.g. 30 degrees
 selected_time = 60    # whatever frame you want 1 ≤ t ≤ n_predict
 selected_time_idx = selected_time - 1 # change to an index
 

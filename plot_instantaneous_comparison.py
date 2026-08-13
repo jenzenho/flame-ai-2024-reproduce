@@ -29,8 +29,8 @@ data_root_folder = './model_outputs/'
 COMPETITION_OR_BASELINEMODS = 'competition' 
 
 if COMPETITION_OR_BASELINEMODS == 'competition':
-    folders = ['Line','Nelson ROS','Simulation ROS','Baseline','Ajay Asaithambi','Jobayer Hossain','Rafal Pawlowski','Zhuoqun Li','Thomas Dubail']
-    model_label = ['Linear Regression','Nelson ROS','Simulation ROS','Baseline ML Model','Mixed','Latent Loop','SwinUNet','MultiResUNet','Conv-TT-LSTM']
+    folders = ['Line','Rothermel ROS','Nelson ROS','Simulation ROS','Baseline','Ajay Asaithambi','Jobayer Hossain','Rafal Pawlowski','Zhuoqun Li','Thomas Dubail']
+    model_label = ['Linear Regression','Rothermel ROS','Nelson ROS','Simulation ROS','Baseline ML Model','Mixed','Latent Loop','SwinUNet','MultiResUNet','Conv-TT-LSTM']
 elif COMPETITION_OR_BASELINEMODS == 'baseline_modifications':
     folders = ['Baseline','Baseline_with_Otsu',
                'Baseline_4fold_uniformweight_ensemblerollout','Baseline_4fold_uniformweight_ensemblerollout_otsu',

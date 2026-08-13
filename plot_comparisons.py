@@ -32,7 +32,7 @@ ROOT_FOLDER = Path("./model_outputs")
 # Choose which family of models to compare:
 # - 'competition': original competition entries
 # - 'baseline_modifications': variants of the baseline model
-COMPETITION_OR_BASELINEMODS = 'baseline_modifications' 
+COMPETITION_OR_BASELINEMODS = 'competition' 
 
 if COMPETITION_OR_BASELINEMODS == 'competition':
     folders = ['Line','Rothermel ROS','Nelson ROS','Simulation ROS','Baseline','Ajay Asaithambi','Jobayer Hossain','Rafal Pawlowski','Zhuoqun Li','Thomas Dubail']
